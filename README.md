@@ -1,6 +1,6 @@
 # 🎯 Atividade Prática Detecção de Agressões
 
-> **Objetivo:** Implementar um pipeline completo de visão computacional para detectar eventos em vídeos usando técnicas de processamento de imagem e machine learning.
+> **Objetivo:** Implementar um pipeline completo para detectar eventos em vídeos.
 
 ## 📁 Estrutura do Projeto
 
@@ -39,7 +39,7 @@ DETECTOR-DE-EVENTOS-EM-VIDEOS/
 ## Atividades
 
 ### **Etapa 1: Pré-processamento (`src/preprocessing/dataProcessor.py`)**
-** O que você vai implementar:**
+**O que você vai implementar:**
 - [] Função `extrair_frames()` - Extração de frames do vídeo
 - [] Função `pre_processar_frame()` - Redimensionamento e normalização
 
@@ -48,7 +48,7 @@ DETECTOR-DE-EVENTOS-EM-VIDEOS/
 ---
 
 ### **Etapa 2: Detecção de Keypoints (`src/preprocessing/keypoints.py`)**
-** O que você vai implementar:**
+**O que você vai implementar:**
 - [] Função `extract_keypoints_extended` - Usar o YOLO para detecção de pontos de interesse
 - [] Função `draw_keypoints` - Usar OpenCV para desenhar os pontos de interesse
 
@@ -57,7 +57,7 @@ DETECTOR-DE-EVENTOS-EM-VIDEOS/
 ---
 
 ### **Etapa 3: Extração de Features (`src/preprocessing/features.py` e `src/preprocessing/representation.py`)**
-** O que você vai implementar:**
+**O que você vai implementar:**
 
 `src/preprocessing/features.py`:
 - [] Definir configurações de ângulos corporais importantes (`angle_configs`)
@@ -73,7 +73,7 @@ DETECTOR-DE-EVENTOS-EM-VIDEOS/
 ---
 
 ### **Etapa 4: Treinamento (`src/training/train.py`)**
-** O que você vai implementar:**
+**O que você vai implementar:**
 ```
 class Config:
     MAX_SEQUENCE_LENGTH =     # Comprimento máximo das sequências
