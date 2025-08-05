@@ -1,4 +1,4 @@
-# 🎯 Atividade Prática Detecção de Agressões
+# 🎯 Atividade Prática - Detecção de Agressões
 
 > **Objetivo:** Implementar um pipeline completo para detectar eventos em vídeos.
 
