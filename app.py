@@ -11,16 +11,15 @@ import uuid
 from pathlib import Path
 import imageio.v2 as imageio  
 from get_cookies import extract_youtube_cookies
+from src.training.train import PoseRNN, Config
 import logging
 
 # Configurar logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Configurar o path do torch corretamente
 if hasattr(torch, 'classes') and hasattr(torch.classes, '__path__'):
     torch.classes.__path__ = [os.path.join(torch.__path__[0], 'classes')] 
 
-# Importando os módulos necessários do seu código existente
 from src.preprocessing.dataProcesser import download_youtube_video, extrair_frames
 from src.preprocessing.keypoints import extract_keypoints_extended
 from src.preprocessing.features import process_video_keypoints
@@ -42,7 +41,6 @@ def salvar_gif(frames, path, fps=5, loop=0):
 # Função para carregar o modelo treinado
 def load_model(model_path=f'best_{MODEL_TYPE}_model.pth'):
     try:
-        from src.training.train import PoseRNN, Config
         Config.HIDDEN_SIZE = 512
         input_size = 72
         model = PoseRNN(input_size, rnn_type=MODEL_TYPE)
@@ -87,7 +85,7 @@ def predict(model, features, seq_length=64):
 def process_video(youtube_url, progress_callback=None):
     try:
         logging.info(f"Iniciando processamento do vídeo: {youtube_url}")
-        extract_youtube_cookies(os.getcwd())  # Passa o diretório atual
+        extract_youtube_cookies(os.getcwd()) 
         progress_callback("Baixando vídeo...", 0.1)
         video_path, title = download_youtube_video(youtube_url)
 
