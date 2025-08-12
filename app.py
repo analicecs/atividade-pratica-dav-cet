@@ -42,7 +42,7 @@ def salvar_gif(frames, path, fps=5, loop=0):
 # Função para carregar o modelo treinado
 def load_model(model_path=f'best_{MODEL_TYPE}_model.pth'):
     try:
-        from training.train import PoseRNN, Config
+        from src.training.train import PoseRNN, Config
         Config.HIDDEN_SIZE = 512
         input_size = 72
         model = PoseRNN(input_size, rnn_type=MODEL_TYPE)
